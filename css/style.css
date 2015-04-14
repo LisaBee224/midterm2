@@ -41,8 +41,6 @@ body {
 .itemgroup {
   display: inline-block; }
 
-.adding_item {
-  width: 100%; }
   .adding_item ul {
     display: inline-block;
     list-style: none; }

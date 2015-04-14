@@ -1,8 +1,6 @@
 
 vegApp.controller('itemListController', function ($scope){
-	$scope.new_item = {};
-	console.log('attached');
-$scope.items = [
+	$scope.items = [
 			{imageurl: 'images/strawberry.png', type: 'strawberry', name: 'Herbert Strawberry', occupation: 'dogwalker', superpower: 'power-C boost'},
 			{imageurl: 'images/blueberry.png', type: 'blueberry', name: 'Ulysses Blueberry', occupation: 'construction worker', superpower: 'super strength' },
 			{imageurl: 'images/orange.png', type: 'orange', name: 'Otto Sly Orange', occupation: 'yogi', superpower: 'immuno-defense' },
@@ -13,19 +11,16 @@ $scope.items = [
 			{imageurl: 'images/avocado.png' , type: 'avocado', name: 'Garcia Avocado', occupation: 'hairstylist', superpower: 'uber fast growing hair' },
 			{imageurl: 'images/tomato.png' , type: 'tomato', name: 'Tony Tomato', occupation: 'weather anchor', superpower: 'carcinogen-shield' }
 		];
-
+		$scope.arsenal = [];
 
 
 
 	$scope.additem = function(new_item){
-			$scope.items.push( new_item );
-			$scope.adding_item = {};
-		$scope.newitems={};
-			$scope.add_item_error = "";
+			$scope.arsenal.push( new_item );
 		};
 		console.log('scope', $scope);
 	});
 
-	
+
 
 
