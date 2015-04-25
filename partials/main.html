@@ -1,17 +1,19 @@
-    <div class="main">
+<div class="main">
 
-      <h2>Summon your Vitamin Power</h2>
-      <p>Which of these did you eat today?</p>
-      <form name="add_item_form" novalidate ng-submit="additem()">
-        <div class="input">
-        <input type="text" placeholder="what'd you eat?" ng-model="searchFor" ng-required="true"/>
+  <h2>Summon your Vitamin Power</h2>
+  <p>Which of these did you eat today?</p>
+  <form name="add_item_form" novalidate ng-submit="additem()">
+    <div class="input">
+    <input type="text" placeholder="what'd you eat?" ng-model="searchFor" ng-required="true"/>
 
-        <button ng-click="additem()"  ng-disabled="add_item_form.$invalid" class="btn btn-success">Add to Your Arsenal</button>
-        </div>
-      </form>
+    <button ng-click="additem()"  ng-disabled="add_item_form.$invalid" class="btn btn-success">Add to Your Arsenal</button>
+    </div>
+  </form>
+  <div class="container">
+    <div class="row">
       <div class="col-md-3 adding_item" ng-repeat= "item in items | filter:searchFor track by $index">
         <ul class = "itemgroup">
-       
+
             <li ng-model="items.imageurl">
               <img ng-src ="{{ item.imageurl }}" alt="{{ item.type }}">
             </li>
@@ -31,12 +33,35 @@
             <li>
             </li>
         </ul>
-        </div>
+      </div>
     </div>
-     
+  </div>
+</div>
+
 
 <div class="arsenal">
   <h2>Nutritional Arsenal</h2>
-  {{adding_item}}
-
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 adding_item" ng-repeat= "item in arsenal | filter:searchFor track by $index">
+        <ul class = "itemgroup">
+          <li ng-model="items.imageurl">
+            <img ng-src ="{{ item.imageurl }}" alt="{{ item.type }}">
+          </li>
+          <li ng-model="items.type">
+            {{ item.type }}
+          </li>
+          <li ng-model="items.name">
+            {{ item.name }}
+          </li>
+          <li ng-model="items.occupation" >
+            {{ item.occupation }}
+          </li>
+          <li ng-model="items.superpower">
+            {{ item.superpower }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
